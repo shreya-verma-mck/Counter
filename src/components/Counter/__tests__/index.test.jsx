@@ -10,31 +10,31 @@ describe("Counter", () => {
   });
   it("should display the initial counter value as 0", () => {
     const { getByTestId } = render(<Counter />);
-    const counterValue = getByTestId("counterValue");
+    const counterValue = getByTestId("counter-value");
     expect(counterValue).toHaveTextContent(0);
   });
   it("should increment the counter value by 1 when the plus button is clicked", () => {
     const { getByTestId } = render(<Counter />);
-    const plusButton = getByTestId("plusButton");
+    const plusButton = getByTestId("plus-button");
     fireEvent.click(plusButton);
-    const counterValue = getByTestId("counterValue");
+    const counterValue = getByTestId("counter-value");
     expect(counterValue).toHaveTextContent(1);
   });
   it("should decrement the counter value by 1 when the counter value is greater than 1 and minus icon is clicked", () => {
     const { getByTestId } = render(<Counter />);
-    const plusButton = getByTestId("plusButton");
+    const plusButton = getByTestId("plus-button");
     fireEvent.click(plusButton);
     fireEvent.click(plusButton);
-    const minusButton = getByTestId("minusButton");
+    const minusButton = getByTestId("minus-button");
     fireEvent.click(minusButton);
-    const counterValue = getByTestId("counterValue");
+    const counterValue = getByTestId("counter-value");
     expect(counterValue).toHaveTextContent(1);
   });
   it("should not decrement the counter value by 1 when the counter value is 0 and the minus icon is clicked", () => {
     const { getByTestId } = render(<Counter />);
-    const minusButton = getByTestId("minusButton");
+    const minusButton = getByTestId("minus-button");
     fireEvent.click(minusButton);
-    const counterValue = getByTestId("counterValue");
+    const counterValue = getByTestId("counter-value");
     expect(counterValue).toHaveTextContent(0);
   });
 });

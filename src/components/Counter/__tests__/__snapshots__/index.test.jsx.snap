@@ -7,7 +7,7 @@ exports[`Counter should match the snapshot 1`] = `
   >
     <p
       class="counterValue"
-      data-testid="counterValue"
+      data-testid="counter-value"
     >
       0
     </p>
@@ -16,14 +16,14 @@ exports[`Counter should match the snapshot 1`] = `
     >
       <button
         class="counterButton"
-        data-testid="plusButton"
+        data-testid="plus-button"
         type="button"
       >
         +
       </button>
       <button
         class="counterButton"
-        data-testid="minusButton"
+        data-testid="minus-button"
         type="button"
       >
         -
