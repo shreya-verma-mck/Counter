@@ -1,26 +1,39 @@
 import React, { useState } from "react";
+import "./counter.css";
 
-function Counter() {
+const Counter = () => {
   const [counter, setCounter] = useState(0);
   return (
-    <div>
-      <p data-testid="counterValue">{counter}</p>
-      <button
-        data-testid="plusButton"
-        type="button"
-        onClick={() => setCounter(counter + 1)}
-      >
-        +
-      </button>
-      <button
-        data-testid="minusButton"
-        type="button"
-        onClick={() => setCounter(counter - 1)}
-      >
-        -
-      </button>
+    <div className="counterContainer">
+      <p data-testid="counterValue" className="counterValue">
+        {counter}
+      </p>
+      <div className="counterButtonContainer">
+        <button
+          data-testid="plusButton"
+          type="button"
+          className="counterButton"
+          onClick={() => setCounter(counter + 1)}
+        >
+          +
+        </button>
+        <button
+          data-testid="minusButton"
+          type="button"
+          className="counterButton"
+          onClick={() => {
+            if (counter > 1) {
+              setCounter(counter - 1);
+            } else {
+              setCounter(0);
+            }
+          }}
+        >
+          -
+        </button>
+      </div>
     </div>
   );
-}
+};
 
 export default Counter;

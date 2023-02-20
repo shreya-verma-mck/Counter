@@ -26,8 +26,6 @@
       "!**/*.js",
       "!**/node_modules/**",
       "!**/src/constants/**",
-      "!**/src/context/**",
-      "!**/src/types/**",
       "!**/src/assets/**",
       "!**/src/mocks/**"
     ]
@@ -36,7 +34,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage": "npm run test -- --coverage --watchAll=false",
+    "test:coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

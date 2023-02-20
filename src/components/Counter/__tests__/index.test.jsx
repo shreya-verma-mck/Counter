@@ -20,11 +20,21 @@ describe("Counter", () => {
     const counterValue = getByTestId("counterValue");
     expect(counterValue).toHaveTextContent(1);
   });
-  it("should decrement the counter value by 1 when the minus icon is clicked", () => {
+  it("should decrement the counter value by 1 when the counter value is greater than 1 and minus icon is clicked", () => {
+    const { getByTestId } = render(<Counter />);
+    const plusButton = getByTestId("plusButton");
+    fireEvent.click(plusButton);
+    fireEvent.click(plusButton);
+    const minusButton = getByTestId("minusButton");
+    fireEvent.click(minusButton);
+    const counterValue = getByTestId("counterValue");
+    expect(counterValue).toHaveTextContent(1);
+  });
+  it("should not decrement the counter value by 1 when the counter value is 0 and the minus icon is clicked", () => {
     const { getByTestId } = render(<Counter />);
     const minusButton = getByTestId("minusButton");
     fireEvent.click(minusButton);
     const counterValue = getByTestId("counterValue");
-    expect(counterValue).toHaveTextContent(-1);
+    expect(counterValue).toHaveTextContent(0);
   });
 });
