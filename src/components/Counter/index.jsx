@@ -5,12 +5,9 @@ const Counter = () => {
   const [counter, setCounter] = useState(0);
   return (
     <div className="counterContainer">
-      <p data-testid="counter-value" className="counterValue">
-        {counter}
-      </p>
+      <p className="counterValue">{counter}</p>
       <div className="counterButtonContainer">
         <button
-          data-testid="plus-button"
           type="button"
           className="counterButton"
           onClick={() => setCounter(counter + 1)}
@@ -18,7 +15,6 @@ const Counter = () => {
           +
         </button>
         <button
-          data-testid="minus-button"
           type="button"
           className="counterButton"
           onClick={() => {
