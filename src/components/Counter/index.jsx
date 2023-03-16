@@ -9,6 +9,7 @@ const Counter = () => {
       <div className="counterButtonContainer">
         <button
           type="button"
+          data-testid="increment"
           className="counterButton"
           onClick={() => setCounter(counter + 1)}
         >
@@ -17,11 +18,10 @@ const Counter = () => {
         <button
           type="button"
           className="counterButton"
+          data-testid="decrement"
           onClick={() => {
             if (counter > 1) {
               setCounter(counter - 1);
-            } else {
-              setCounter(0);
             }
           }}
         >

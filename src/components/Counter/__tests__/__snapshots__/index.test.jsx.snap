@@ -15,12 +15,14 @@ exports[`Counter should match the snapshot 1`] = `
     >
       <button
         class="counterButton"
+        data-testid="increment"
         type="button"
       >
         +
       </button>
       <button
         class="counterButton"
+        data-testid="decrement"
         type="button"
       >
         -
